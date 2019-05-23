@@ -1,5 +1,5 @@
 server:
-  port: @server.port@
+  port: 6002
 spring:
   application:
     name: eureka
@@ -27,4 +27,5 @@ eureka:
 info:
   app:
     name: ${spring.application.name}
-    version: @project.version@
+    version: 1.0.0
+

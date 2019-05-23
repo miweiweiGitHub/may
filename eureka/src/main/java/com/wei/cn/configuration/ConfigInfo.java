@@ -11,5 +11,7 @@ public class ConfigInfo {
 
     private String uploadPath;
 
-
+    public static ConfigInfo getConfigInfo() {
+        return new ConfigInfo();
+    }
 }

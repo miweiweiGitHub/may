@@ -23,6 +23,7 @@
         <module>may-model</module>
         <module>config</module>
         <module>eureka</module>
+        <module>gateway</module>
     </modules>
 
     <dependencyManagement>
