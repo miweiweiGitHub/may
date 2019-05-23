@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.wei.cn</groupId>
+    <artifactId>dependencies</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+
+    <properties>
+
+        <org.projectlombok.version>1.16.20</org.projectlombok.version>
+        <com.spring4all.version>1.5.1.RELEASE</com.spring4all.version>
+        <spring-boot-starter-web.version>1.5.8.RELEASE</spring-boot-starter-web.version>
+        <com.alibaba.version>1.2.47</com.alibaba.version>
+        <commons-codec.version>1.12</commons-codec.version>
+        <org.apache.httpcomponents.version>4.5.8</org.apache.httpcomponents.version>
+
+
+
+    </properties>
+
+
+    <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot-starter-web.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${commons-codec.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${org.apache.httpcomponents.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${org.projectlombok.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>com.spring4all</groupId>
+            <artifactId>spring-boot-starter-swagger</artifactId>
+            <version>${com.spring4all.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${com.alibaba.version}</version>
+        </dependency>
+
+    </dependencies>
+    </dependencyManagement>
+
+</project>
