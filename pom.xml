@@ -20,6 +20,9 @@
     <modules>
         <module>common</module>
         <module>dependencies</module>
+        <module>may-model</module>
+        <module>config</module>
+        <module>eureka</module>
     </modules>
 
     <dependencyManagement>

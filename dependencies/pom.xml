@@ -11,13 +11,17 @@
 
 
     <properties>
+        <spring-boot-starter-cache.version>2.0.2.RELEASE</spring-boot-starter-cache.version>
 
-        <org.projectlombok.version>1.16.20</org.projectlombok.version>
         <com.spring4all.version>1.5.1.RELEASE</com.spring4all.version>
+        <org.projectlombok.version>1.16.20</org.projectlombok.version>
         <spring-boot-starter-web.version>1.5.8.RELEASE</spring-boot-starter-web.version>
         <com.alibaba.version>1.2.47</com.alibaba.version>
         <commons-codec.version>1.12</commons-codec.version>
         <org.apache.httpcomponents.version>4.5.8</org.apache.httpcomponents.version>
+        <commons-lang3.version>3.6</commons-lang3.version>
+        <common.version>1.0.0</common.version>
+
 
 
 
@@ -26,6 +30,20 @@
 
     <dependencyManagement>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <version>Edgware.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+            <version>${spring-boot-starter-cache.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -60,6 +78,41 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${com.alibaba.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zuul</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+
+        <!--本工程内部模块依赖-->
+        <dependency>
+            <groupId>com.wei.cn</groupId>
+            <artifactId>common</artifactId>
+            <version>${common.version}</version>
         </dependency>
 
     </dependencies>

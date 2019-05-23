@@ -1,0 +1,27 @@
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8970/eureka/
+
+server:
+  port: @server.port@
+
+info:
+  app:
+    name: ${spring.application.name}
+    version: @project.version@
+
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:miweiweiGitHub/config-info.git
+          search-paths: /**
+          strict-host-key-checking: false
+
+management:
+  security:
+    enabled: false

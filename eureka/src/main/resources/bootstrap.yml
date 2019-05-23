@@ -1,0 +1,30 @@
+server:
+  port: @server.port@
+spring:
+  application:
+    name: eureka
+  cloud:
+    config:
+      label: master
+      profile:
+      uri: http://localhost:6001
+      fail-fast: true
+      retry:
+        initial-interval: 2000
+        max-attempts: 2000
+        max-interval: 5000
+        multiplier: 1.1
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+  # 测试时关闭自我保护机制，保证不可用服务及时踢出
+  server:
+    enable-self-preservation: false
+
+info:
+  app:
+    name: ${spring.application.name}
+    version: @project.version@
