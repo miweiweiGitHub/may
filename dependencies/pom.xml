@@ -8,114 +8,198 @@
     <artifactId>dependencies</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
+    <name>dependencies</name>
+    <description>dependencies</description>
 
+    <developers>
+        <developer>
+            <name>may</name>
+            <email>lw726466163@163.com</email>
+        </developer>
+    </developers>
 
     <properties>
-        <spring-boot-starter-cache.version>2.0.2.RELEASE</spring-boot-starter-cache.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
 
-        <com.spring4all.version>1.5.1.RELEASE</com.spring4all.version>
-        <org.projectlombok.version>1.16.20</org.projectlombok.version>
-        <spring-boot-starter-web.version>1.5.8.RELEASE</spring-boot-starter-web.version>
-        <com.alibaba.version>1.2.47</com.alibaba.version>
-        <commons-codec.version>1.12</commons-codec.version>
-        <org.apache.httpcomponents.version>4.5.8</org.apache.httpcomponents.version>
+        <!-- 工程用到的maven库版本号列表 -->
+        <commons-codec.version>1.10</commons-codec.version>
+        <jjwt.version>0.7.0</jjwt.version>
+        <codehaus-jackson.version>1.9.13</codehaus-jackson.version>
+        <mybatis-plus-boot-starter.version>3.0-RC1</mybatis-plus-boot-starter.version>
+        <mybatis-plus-support.version>2.3</mybatis-plus-support.version>
+        <druid.version>1.0.29</druid.version>
+        <druid-spring-boot-starter.version>1.1.0</druid-spring-boot-starter.version>
+        <mapper.version>3.4.0</mapper.version>
+
+        <mysql.version>5.1.39</mysql.version>
+        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+        <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <guava.version>17.0</guava.version>
+        <boot.admin.version>1.5.6</boot.admin.version>
+        <httpclientutil.version>1.0</httpclientutil.version>
+        <hibernate-validator.version>5.3.6.Final</hibernate-validator.version>
+        <fastjson.version>1.2.41</fastjson.version>
+        <modelmapper.version>1.1.2</modelmapper.version>
+        <lombok.version>1.16.18</lombok.version>
+        <jpinyin.version>1.1.8</jpinyin.version>
         <commons-lang3.version>3.6</commons-lang3.version>
+
+        <!--libcore版本号定义-->
+        <!--<commons-spring-boot-starter.version>1.0.0</commons-spring-boot-starter.version>-->
+        <spring-boot-starter-cache.version>2.0.2.RELEASE</spring-boot-starter-cache.version>
+        <redis-spring-boot-starter.version>1.0.0</redis-spring-boot-starter.version>
+        <mqtt-spring-boot-starter.version>1.0.1</mqtt-spring-boot-starter.version>
+        <rabbit-spring-boot-starter.version>1.0.0</rabbit-spring-boot-starter.version>
+        <swagger-spring-boot-starter.version>1.0.0</swagger-spring-boot-starter.version>
+
+        <!--本工程内部模块版本号定义-->
         <common.version>1.0.0</common.version>
+        <s1plat-iflytek-api.version>1.0.0</s1plat-iflytek-api.version>
+        <s1plat-dialogue-api.version>1.0.0</s1plat-dialogue-api.version>
+        <s1plat-user-api.version>1.0.0</s1plat-user-api.version>
+        <s1plat-favorite-api.version>1.0.0</s1plat-favorite-api.version>
+        <s1plat-voicetransfer-api.version>1.0.0</s1plat-voicetransfer-api.version>
+        <s1plat-skill-api.version>1.0.0</s1plat-skill-api.version>
+        <s1plat-device-api.version>1.0.0</s1plat-device-api.version>
+        <s1plat-operation-api.version>1.0.0</s1plat-operation-api.version>
+        <s1plat-contact-api.version>1.0.0</s1plat-contact-api.version>
+        <s1plat-hejia-api.version>1.0.0</s1plat-hejia-api.version>
+        <s1plat-baseplat-api.version>1.0.0</s1plat-baseplat-api.version>
+        <s1plat-recorder-api.version>1.0.0</s1plat-recorder-api.version>
+        <s1plat-ximalaya-api.version>1.0.0</s1plat-ximalaya-api.version>
+        <s1plat-ehome-api.version>1.0.0</s1plat-ehome-api.version>
 
 
-
-
+        <shiro.version>1.2.3</shiro.version>
+        <shiro.ehcache.version>1.2.3</shiro.ehcache.version>
+        <shiro.cas.version>1.2.3</shiro.cas.version>
+        <spring.data.elasticsearch.version>2.1.18.RELEASE</spring.data.elasticsearch.version>
     </properties>
 
-
     <dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-dependencies</artifactId>
-            <version>Edgware.RELEASE</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-cache</artifactId>
+                <version>${spring-boot-starter-cache.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis -->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-cas</artifactId>
+                <version>${shiro.cas.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-ehcache</artifactId>
+                <version>${shiro.ehcache.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Edgware.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-cache</artifactId>
-            <version>${spring-boot-starter-cache.version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring-boot-starter-web.version}</version>
-        </dependency>
+            <!--libcore依赖-->
+            <!--<dependency>-->
+            <!--<groupId>net.sunniwell.commons</groupId>-->
+            <!--<artifactId>commons-spring-boot-starter</artifactId>-->
+            <!--<version>${commons-spring-boot-starter.version}</version>-->
+            <!--</dependency>-->
+           <!-- <dependency>
+                <groupId>net.sunniwell.commons</groupId>
+                <artifactId>redis-spring-boot-starter</artifactId>
+                <version>${redis-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sunniwell.commons</groupId>
+                <artifactId>mqtt-spring-boot-starter</artifactId>
+                <version>${mqtt-spring-boot-starter.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>${commons-codec.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>net.sunniwell.commons</groupId>
+                <artifactId>rabbit-spring-boot-starter</artifactId>
+                <version>${rabbit-spring-boot-starter.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>${org.apache.httpcomponents.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>net.sunniwell.commons</groupId>
+                <artifactId>swagger-spring-boot-starter</artifactId>
+                <version>${swagger-spring-boot-starter.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${org.projectlombok.version}</version>
-            <optional>true</optional>
-        </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>com.spring4all</groupId>
-            <artifactId>spring-boot-starter-swagger</artifactId>
-            <version>${com.spring4all.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${com.alibaba.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-support</artifactId>
+                <version>${mybatis-plus-support.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zuul</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.version}</version>
+            </dependency>-->
 
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>${commons-lang3.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
 
-        <!--本工程内部模块依赖-->
-        <dependency>
-            <groupId>com.wei.cn</groupId>
-            <artifactId>common</artifactId>
-            <version>${common.version}</version>
-        </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.stuxuhai</groupId>
+                <artifactId>jpinyin</artifactId>
+                <version>${jpinyin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
 
-    </dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <!--本工程内部模块依赖-->
+            <dependency>
+                <groupId>com.wei.cn</groupId>
+                <artifactId>common</artifactId>
+                <version>${common.version}</version>
+            </dependency>
+
+        </dependencies>
     </dependencyManagement>
 
 </project>

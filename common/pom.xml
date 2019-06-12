@@ -5,6 +5,11 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>common</artifactId>
+    <groupId>com.wei.cn</groupId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+    <name>common</name>
+    <description>common project for Spring Boot</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

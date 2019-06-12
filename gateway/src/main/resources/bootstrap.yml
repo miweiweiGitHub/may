@@ -1,0 +1,200 @@
+server:
+  port: 6000
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://127.0.0.1:6001
+      fail-fast: true
+      retry:
+        initial-interval: 2000
+        max-attempts: 2000
+        max-interval: 5000
+        multiplier: 1.1
+  redis:
+    database: 1
+info:
+  app:
+    name: ${spring.application.name}
+    version: 1.0.0
+
+#zuul:
+#  host:
+#    connect-timeout-millis: 6000
+#    socket-timeout-millis: 6000
+#  routes:
+#    open-api:
+#      path: /open-api/**
+#      serviceId: app-service
+
+#  cloud:
+#    config:
+#      uri: http://localhost:8769
+#      fail-fast: true
+#  profiles:
+#    active: pro
+
+#  thymeleaf:
+#    mode: HTML5
+
+
+
+#zuul:
+#  ignored-patterns: /s1box-api/*/inner/**
+#  prefix: /s1box-api
+#  host:
+#    connect-timeout-millis: 6000
+#    socket-timeout-millis: 6000
+#  routes:
+#    user:
+#      path: /user/**
+#      serviceId: s1plat-user
+#      stripPrefix: false
+#    family:
+#      path: /family/**
+#      serviceId: s1plat-user
+#      stripPrefix: false
+#    room:
+#      path: /room/**
+#      serviceId: s1plat-user
+#      stripPrefix: false
+#    feedback:
+#      path: /operation/feedback/**
+#      serviceId: s1plat-user
+#      stripPrefix: false
+#    unisound:
+#      path: /unisound/**
+#      serviceId: s1plat-unisound
+#      stripPrefix: false
+#    contact:
+#      path: /contact/**
+#      serviceId: s1plat-contact
+#      stripPrefix: false
+#    device:
+#      path: /device/**
+#      serviceId: s1plat-device
+#      stripPrefix: false
+#    dialogue:
+#      path: /dialogue/**
+#      serviceId: s1plat-dialogue
+#      stripPrefix: false
+#    favorite:
+#      path: /operation/**
+#      serviceId: s1plat-favorite
+#      stripPrefix: false
+#    operation-adv:
+#      path: /adv/**
+#      serviceId: s1plat-operation
+#      stripPrefix: false
+#    operation-rec:
+#      path: /rec/**
+#      serviceId: s1plat-operation
+#      stripPrefix: false
+#    hejia:
+#      path: /hejiafamily/**
+#      serviceId: s1plat-hejia
+#      stripPrefix: false
+#    migu:
+#      path: /migu/**
+#      serviceId: s1plat-migu
+#      stripPrefix: false
+#    skill:
+#      path: /skill/**
+#      serviceId: s1plat-skill
+#      stripPrefix: false
+#    recorder-transfer:
+#      path: /transfer/**
+#      serviceId: s1plat-recorder
+#      stripPrefix: false
+#    recorder-call:
+#      path: /call/**
+#      serviceId: s1plat-recorder
+#      stripPrefix: false
+#    recorder-clock:
+#      path: /clock/**
+#      serviceId: s1plat-recorder
+#      stripPrefix: false
+#    recorder-voice:
+#      path: /voice/**
+#      serviceId: s1plat-recorder
+#      stripPrefix: false
+#    recorder-schedule:
+#      path: /schedule/**
+#      serviceId: s1plat-recorder
+#      stripPrefix: false
+#    image-prefix:
+#      path: /image/prefix
+#      serviceId: s1plat-user
+#      stripPrefix: false
+#    image-checkUpdate:
+#      path: /image/checkUpdate
+#      serviceId: s1plat-user
+#      stripPrefix: false
+#    resource:
+#      path: /image/**
+#      serviceId: s1plat-resource
+#      stripPrefix: false
+#    ximalaya:
+#      path: /ximalaya/**
+#      serviceId: s1plat-ximalaya
+#      stripPrefix: false
+#    f3:
+#      path: /f3/**
+#      serviceId: s1plat-f3
+#      stripPrefix: false
+#    rokid:
+#      path: /rokid/**
+#      serviceId: s1plat-rokid
+#      stripPrefix: false
+#
+#
+#uri:
+#  open:
+#    sign:
+#      need:
+#        - ${zuul.prefix}/user/check
+#        - ${zuul.prefix}/user/login
+#        - ${zuul.prefix}/user/password/reset
+#        - ${zuul.prefix}/user/password/reset
+#        - ${zuul.prefix}/user/register
+#        - ${zuul.prefix}/user/open/register
+#        - ${zuul.prefix}/user/vcode/get
+#        - ${zuul.prefix}/device/listProduct
+#        - ${zuul.prefix}/user/open/check
+#        - ${zuul.prefix}/user/open/login
+#        - ${zuul.prefix}/user/open/mobileLogin
+#        - ${zuul.prefix}/user/open/password/reset
+#        - ${zuul.prefix}/user/open/mobile/registerOrLogin
+#        - ${zuul.prefix}/user/open/register
+#        - ${zuul.prefix}/user/open/vcode/get
+#        - ${zuul.prefix}/open/refreshToken
+#        - ${zuul.prefix}/user/xy/checkCredential
+#        - ${zuul.prefix}/operation/favorite/listBydeviceId
+#      without:
+#        - ${zuul.prefix}/family/qrcode
+#        - ${zuul.prefix}/image/prefix
+#        - ${zuul.prefix}/s1box-api/hejiafamily/receiveMsg
+#        - ${zuul.prefix}/image/checkUpdate
+#        - ${zuul.prefix}/devlog/add
+#        - ${zuul.prefix}/user/getToken
+#        - ${zuul.prefix}/unisound/textToAudio
+#sunniwell:
+#  auth:
+#    appKey: 6818f620b6d06588d60d2b8c038597a1
+#  ucs:
+#    checkUrl: http://172.16.36.180:7850/apis/user/open/checkToken
+#  cache:
+#    expira: 3600
+  swagger:
+    open-api:
+      package-path: com.wei.cn
+      title: 开放接口
+      description: 网关接口描述
+    name: liwei
+    email: lw726466163@163.com
+    url: www.baidu.com
+    version: 1.0.0
