@@ -1,0 +1,41 @@
+server:
+  port: 6011
+spring:
+  application:
+    name: one
+  cloud:
+    config:
+      label: master
+      profile:
+      uri: http://127.0.0.1:6001
+      fail-fast: true
+      retry:
+        initial-interval: 2000
+        max-attempts: 2000
+        max-interval: 5000
+        multiplier: 1.1
+
+info:
+  app:
+    name: ${spring.application.name}
+    version: 1.0.0
+foo: foo version 1
+sunniwell:
+  swagger:
+    open-api:
+      package-path: com.wei.cn.controller
+      title: 开放接口
+      description: S1平台接口描述
+#    server-api:
+#      package-path: net.sunniwell.s1plat.client
+#      title: 内部服务接口
+#      description: S1平台组件内部服务接口描述
+    name: liwei
+    email: liwei@sunniwell.net
+    url: www.sunniwell.net
+    version: 1.0.0
+
+alipay:
+  notify:
+    url: https://blog.52itstyle.vip/alipay/pay
+

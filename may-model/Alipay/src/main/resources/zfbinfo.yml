@@ -1,0 +1,43 @@
+# 支付宝网关名、partnerId和appId 欢迎关注https://blog.52itstyle.com/
+open:
+  api:
+   domain: https://openapi.alipay.com/gateway.do
+mcloud:
+  api:
+    domain: http://mcloudmonitor.com/gateway.do
+#此处请填写你的PID
+pid: XXXXXXXXXXXXXXXX
+#此处请填写你当面付的APPID 
+appid: XXXXXXXXXXXXXXXX
+
+# RSA私钥、公钥和支付宝公钥
+private:
+  key: XXXXXXXXXXXXXXXX
+public:
+  key: XXXXXXXXXXXXXXXX
+alipay:
+  public:
+    key: XXXXXXXXXXXXXXXX
+
+# 签名类型: RSA->SHA1withRsa,RSA2->SHA256withRsa
+sign:
+  type: RSA2
+
+# 当面付最大查询次数和查询间隔（毫秒）
+# 当面付最大撤销次数和撤销间隔（毫秒）
+
+#max:
+#  query:
+#    retry: 5
+#  cancel:
+#    retry: 3
+query:
+  duration: 5000
+cancel:
+  duration: 2000
+
+
+# 交易保障线程第一次调度延迟和调度间隔（秒）
+heartbeat:
+  delay: 5
+  duration: 900

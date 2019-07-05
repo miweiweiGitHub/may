@@ -45,8 +45,14 @@
         <fastjson.version>1.2.41</fastjson.version>
         <modelmapper.version>1.1.2</modelmapper.version>
         <lombok.version>1.16.18</lombok.version>
+        <snakeyaml.version>1.23</snakeyaml.version>
         <jpinyin.version>1.1.8</jpinyin.version>
         <commons-lang3.version>3.6</commons-lang3.version>
+
+
+
+        <alipay-trade-sdk.version>1.0.0</alipay-trade-sdk.version>
+        <alipay-sdk-java.version>3.4.27.ALL</alipay-sdk-java.version>
 
         <!--libcore版本号定义-->
         <!--<commons-spring-boot-starter.version>1.0.0</commons-spring-boot-starter.version>-->
@@ -55,6 +61,9 @@
         <mqtt-spring-boot-starter.version>1.0.1</mqtt-spring-boot-starter.version>
         <rabbit-spring-boot-starter.version>1.0.0</rabbit-spring-boot-starter.version>
         <swagger-spring-boot-starter.version>1.0.0</swagger-spring-boot-starter.version>
+        <spring-boot-starter-swagger.version>1.5.1.RELEASE</spring-boot-starter-swagger.version>
+        <springfox-swagger2.version>2.7.0</springfox-swagger2.version>
+        <springfox-swagger-ui.version>2.7.0</springfox-swagger-ui.version>
 
         <!--本工程内部模块版本号定义-->
         <common.version>1.0.0</common.version>
@@ -109,6 +118,18 @@
                 <version>Edgware.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- swagger2 文档 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger-ui.version}</version>
             </dependency>
 
 
@@ -192,12 +213,28 @@
                 <version>${commons-lang3.version}</version>
             </dependency>
 
+
+            <dependency>
+                <groupId>vip.52itstyle</groupId>
+                <artifactId>alipay-trade-sdk</artifactId>
+                <version>${alipay-trade-sdk.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alipay.sdk</groupId>
+                <artifactId>alipay-sdk-java</artifactId>
+                <version>${alipay-sdk-java.version}</version>
+            </dependency>
+
             <!--本工程内部模块依赖-->
             <dependency>
                 <groupId>com.wei.cn</groupId>
                 <artifactId>common</artifactId>
                 <version>${common.version}</version>
             </dependency>
+
+
+
 
         </dependencies>
     </dependencyManagement>

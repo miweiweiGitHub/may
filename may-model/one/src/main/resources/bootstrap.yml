@@ -1,5 +1,5 @@
 server:
-  port: @server.port@
+  port: 6010
 spring:
   application:
     name: one
@@ -18,7 +18,7 @@ spring:
 info:
   app:
     name: ${spring.application.name}
-    version: @project.version@
+    version: 1.0.0
 foo: foo version 1
 sunniwell:
   swagger:
@@ -33,4 +33,5 @@ sunniwell:
     name: liwei
     email: liwei@sunniwell.net
     url: www.sunniwell.net
-    version: @project.version@
+    version: 1.0.0
+
