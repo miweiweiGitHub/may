@@ -57,6 +57,7 @@
         <!--libcore版本号定义-->
         <!--<commons-spring-boot-starter.version>1.0.0</commons-spring-boot-starter.version>-->
         <spring-boot-starter-cache.version>2.0.2.RELEASE</spring-boot-starter-cache.version>
+        <!--<spring-boot-starter-gateway.version>2.0.0.RELEASE</spring-boot-starter-gateway.version>-->
         <redis-spring-boot-starter.version>1.0.0</redis-spring-boot-starter.version>
         <mqtt-spring-boot-starter.version>1.0.1</mqtt-spring-boot-starter.version>
         <rabbit-spring-boot-starter.version>1.0.0</rabbit-spring-boot-starter.version>
@@ -96,6 +97,12 @@
                 <artifactId>spring-boot-starter-cache</artifactId>
                 <version>${spring-boot-starter-cache.version}</version>
             </dependency>
+
+           <!-- <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-gateway</artifactId>
+                <version>${spring-boot-starter-gateway.version}</version>
+            </dependency>-->
             <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis -->
             <dependency>
                 <groupId>org.apache.shiro</groupId>
@@ -232,9 +239,6 @@
                 <artifactId>common</artifactId>
                 <version>${common.version}</version>
             </dependency>
-
-
-
 
         </dependencies>
     </dependencyManagement>
